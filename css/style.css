@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+:root {
+    --cinza-texto-base: #666;
+    --vermelho-base: #b20000
+}
+
+.container {
+    max-width: 1600px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+.Etim {
+    color: rgb(185, 38, 38);
+}
+
+.Etim span {
+    color: rgb(55, 55, 55);
+}
+
+.EtecLogo {
+    height: 60px;
+}
+
+li {
+    padding-right: 10px;
+}
+
+a {
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background-color: rgb(185, 38, 38);
+    border-radius: 5px;
+    color: white;
+}
+
+nav {
+    height: 90px;
+    margin: 70px 100px;
+    margin-top: 150px;
+    transition: 0.4s ease-in;
+}
+
+nav.sticky {
+    margin: 10px;
+    height: 90px;
+}
+
+.navbar-custom {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.selected {
+    background-color: rgb(185, 38, 38);
+    color: white;
+}
+
+.nav-items {
+    padding-left: 1.5rem;
+}
+
+.nav-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.current {
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+
+/***************************************/
+.sectionum{
+    width: 100%;
+    height: 120vh;
+}
+/*****************************************/
+
+
+.sectiondois{
+    position: relative;
+    background-color: rgb(247, 245, 245);
+    padding: 7rem 0;
+}
+.sectiondois::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient( transparent, rgb(247, 245, 245));
+    top: -120px;
+    height: 120px;
+    width: 100%;
+}
+.sectiondois h2{
+    color: rgb(193, 14, 14);
+}
+.flip-card{
+    margin: auto;
+    height: 300px;
+}
+.flip-card-front{
+    background-color: white;
+}
+.flip-card-back{
+    background-color: #d54317;
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+.flip-card-inner{
+    position: relative;
+    height: 100%;
+    transition: transform 0.7s ease-in;
+    transform-style: preserve-3d;
+}
+.flip-card-back, .flip-card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+/******************************************/
+.sectiontres{
+    width: 100%;
+    background-color: rgb(196, 11, 11);
+    color: rgb(242, 241, 241);
+}
+.bg{
+    width: 70%;
+    padding:2%;
+    background-color: rgba(255, 255, 255, 0.373);
+}
+.icon_tec{
+    width: 10%;
+    transition: transform 0.4s ease-in-out;
+}
+
+#mysql-icon {
+    position: relative;
+}
+
+#mysql-icon img {
+    position: relative;
+    width: 100%;
+    top: -8px;
+}
+
+#mysql-icon div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: #4479A1;
+}
+
+.icon_tec:hover{
+    transform: scale(1.1);
+}
+/******************************************/
+.sectionquatro{
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(255, 255, 255);
+}
+.sectionquatro .container > h2{
+    color: #d54317;
+}
+.sectionquatro .img_mercado_trabalho{
+    height: 50vh;
+    background-color: red;
+    background-image: url('../assets/images/mercado_de_trabalho.jpg');
+    background-size: 100% 100%;
+}
+/******************************************/
+
+/*********** HERO ***************/
+.first-section {
+    min-height: 100vh;
+    background-image: url("../assets/images/aps-background-image.jpg");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.first-section .light-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.first-section .container {
+    padding: 4%;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.first-section .svg-group {
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.first-section .svg-group #processor-svg {
+    width: 200px;
+    position: absolute;
+    top: 30%;
+    transform: rotate(-10deg);
+}
+
+.first-section .svg-group #chart-svg {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 200px;
+}
+
+.first-section .svg-group #code-svg {
+    width: 150px;
+    position: absolute;
+    top: 60%;
+}
+
+.first-section .hero-content {
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 80px 100px rgba(255, 255, 255, 0.6);
+    width: 60%
+}
+
+.hero-content-text {
+    position: relative;
+}
+
+.first-section .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.first-section .hero-content span {
+    color: rgb(185, 38, 38);
+}
+
+/***********************************/
+footer {
+    width: 100%;
+    background-color: var(--cinza-texto-base);
+    padding: 4rem 0;
+    color: rgb(230, 230, 230);
+}
+
+footer a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+footer h2 {
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
+}
+
+footer .row h2 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: normal;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .desenvolvedores li a {
+    transition: color 0.2s ease;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+}
+
+footer .desenvolvedores li:hover a {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(196, 11, 11);
+    border-radius: 3px;
+}

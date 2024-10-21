@@ -1,0 +1,75 @@
+
+.second-section {
+    padding: 11rem 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+.second-section::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient( transparent, #fff);
+    top: -120px;
+    height: 120px;
+    width: 100%;
+}
+
+.second-section .container > h1 {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(185, 38, 38);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    margin-top: 7rem;
+}
+
+.project-single {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-single .project-content h2 a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-single .project-content h2 a:hover {
+    background-color: rgb(185, 38, 38);
+    color: white;
+}
+
+.project-single .project-content p {
+    margin-top: 1.5rem;
+}
+
+.project-single .project-content {
+    width: 50%;
+}
+
+.project-images {
+    white-space: nowrap;
+}
+
+.project-single .project-images img {
+    width: 400px;
+    box-shadow: 0 0 20px -5px #111;
+}
+
+.project-single .project-images img:first-child {
+    transform: translate(90px, 10px) rotate(-10deg);
+}
+
+.project-single .project-images img:last-child {
+    transform: translate(0px, -30px) rotate(10deg);
+}

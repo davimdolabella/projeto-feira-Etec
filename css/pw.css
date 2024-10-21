@@ -1,0 +1,54 @@
+
+.second-section {
+    padding: 11rem 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+.second-section::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient( transparent, #fff);
+    top: -120px;
+    height: 120px;
+    width: 100%;
+}
+
+.second-section .header {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 7rem;
+}
+
+.second-section .header h1 {
+    color: var(--vermelho-base);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.second-section .header p {
+    font-size: 1.2rem;
+}
+
+.second-section .container > h2 {
+    font-size: 2rem;
+    color: var(--vermelho-base);
+    margin-bottom: 4rem;
+}
+
+.second-section .project-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.second-section .project-images img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.second-section .project-images img:hover {
+    transform: scale(1.01);
+}

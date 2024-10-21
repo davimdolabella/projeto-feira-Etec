@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird do Davi SVC</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            user-select: none;
+        }
+
+        body > a {
+            position: absolute;
+            z-index: 999;
+            top: 40px;
+            right: 40px;
+        }
+
+        body > a img {
+            width: 40px;
+        }
+        
+        canvas {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body onload="start()">
+    <canvas id="cnv" width="700" height="450" style="border: 2px solid green">
+    </canvas>
+    <a href="../../aps.html"><img src="../../assets/svg/return-back-svgrepo-com-black.svg" /></a>
+    
+    <h1>Jogo Flappy Bird</h1>
+
+    <script>
+        var refCanvas = document.getElementById("cnv")
+        var ctx = refCanvas.getContext("2d");
+        var passaro = new Image(); // Atributo para imagem
+        var aceleracao = 0;
+        var pontos;
+
+        var framesInterval;
+
+        var posicPassaro = {
+            x: 30,
+            y: refCanvas.height / 2 - 40
+        }
+
+        var tamanhoPassaro = {
+            larg: 50, 
+            alt: 50
+        }
+
+        var posicTroncoA = {
+            x: refCanvas.width + 110,
+            y: -80
+        }
+
+        var posicTroncoB = {
+            x: refCanvas.width + 110,
+            y: posicTroncoA.y + 350
+        }
+
+        var tamanhoTroncoA = {
+            larg: 110,
+            alt: 280
+        }
+
+        var tamanhoTroncoB = {
+            larg: 110,
+            alt: 280
+        }
+
+        var fundo = new Image();
+        var troncoA = new Image();
+        var troncoB = new Image();
+
+        // Vamos criar as funções que utilizaremos no game.
+        // Funções/Métodos são agrupamentos de instruções.
+        // para realizar algo (função) específica, temos
+        // as funções: start(); desenhar(); e movimento();
+
+        function start () {
+            pontos = 0;
+            posicPassaro.y = refCanvas.height / 2 - 40;
+            posicTroncoA.x = refCanvas.width + 100;
+            posicTroncoB.x = refCanvas.width + 100;
+            aceleracao = 0;
+
+            // Definições de atributos e demais elementos
+            fundo.src = 'images/fundo.png';
+            troncoA.src = 'images/troncoA.png';
+            troncoB.src = 'images/troncoB.png';
+            passaro.src = 'images/passaro.png';
+
+            addEventListener('mousedown', voar);
+            framesInterval = setInterval(desenhar, 20);
+        } // Fim da função
+
+        function desenhar () {
+            pontos += 0.09;
+            posicTroncoA.x--;
+            posicTroncoB.x--;
+            aceleracao += 0.15;
+            posicPassaro.y += aceleracao;
+            colisao();
+            repetirObstaculo();
+
+            ctx.clearRect(0, 0, 800, 800);
+
+            ctx.beginPath(); // Inicia o desenho
+            ctx.drawImage(fundo, 0, 0, 700, 460);
+            ctx.drawImage(passaro, posicPassaro.x, posicPassaro.y, tamanhoPassaro.larg, tamanhoPassaro.alt) // Carregar imagem
+            ctx.drawImage(troncoA, posicTroncoA.x, posicTroncoA.y, tamanhoTroncoA.larg, tamanhoTroncoA.alt);
+            ctx.drawImage(troncoB, posicTroncoB.x, posicTroncoB.y , tamanhoTroncoB.larg, tamanhoTroncoB.alt);
+            ctx.font = "22px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("PONTOS: " + parseInt(pontos), 20, 40);
+            ctx.closePath(); // Encerra o desenho
+
+        } // Fim da função desenhar
+
+        function voar () {
+            aceleracao = 4;
+            aceleracao = -aceleracao;
+
+        } // Fim da função desenhar
+
+        function colisao () {
+            if (posicPassaro.y < 0) {
+                posicPassaro.y = 0;
+                aceleracao = 1;
+            }
+
+            if (posicPassaro.y + tamanhoPassaro.alt> refCanvas.height) {
+                alert('Game over');
+                clearInterval(framesInterval);
+                start();
+            }
+
+        } // Fim da função colisão
+
+        function repetirObstaculo () {
+            if (posicTroncoA.x + 80 < 0) {
+                posicTroncoA.y = -80;
+                posicTroncoB.y = posicTroncoA.y + 350;
+                posicTroncoA.x = refCanvas.width + 110;
+                posicTroncoB.x = refCanvas.width + 110;
+                let randomNumber = 50 * Math.random();
+                let cimaBaixo = Math.random();
+                console.log(cimaBaixo);
+
+                if (cimaBaixo > 0.5) {
+                    posicTroncoA.y -= randomNumber;
+                    posicTroncoB.y -= randomNumber;
+                } else {
+                    posicTroncoA.y += randomNumber;
+                    posicTroncoB.y += randomNumber;
+                }
+                
+            }
+
+            
+
+        }
+
+        start();
+        desenhar();
+
+        
+    </script>
+
+</body>
+
+</html>

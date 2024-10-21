@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/style.css" rel="stylesheet" />
+
+    <title>FrogTECDS</title>
+</head>
+
+<body onload="start()">
+    <a href="../../aps.html"><img src="../../assets/svg/return-back-svgrepo-com.svg"/></a>
+    <div class="app">
+        <canvas id="cnv" width="700" height="500"></canvas>
+        <div class="score">
+            <h2>Score history</h2>
+            <div class="scoreboard">
+                <div id="max-score">
+                    <p>Max score: </p><span></span>
+                </div>
+                <div id="min-score">
+                    <p>Min score: </p><span></span>
+                </div>
+            </div>
+            <ul id="score-all">
+                <li>
+                    <p>100</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
