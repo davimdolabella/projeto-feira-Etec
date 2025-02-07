@@ -9,4 +9,5 @@ O projeto consiste em um site com o objetivo de mostrar de forma breve como func
 - Davi Souza
 
 
-![Uploading Captura de tela 2025-02-07 191529.png…]()
+
+![Captura de tela 2025-02-07 191529](https://github.com/user-attachments/assets/059f05f8-b3b4-4477-a30e-f6a0cb436059)
