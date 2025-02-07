@@ -7,3 +7,6 @@ O projeto consiste em um site com o objetivo de mostrar de forma breve como func
 **Colaboradores do projeto**
 - Davi M. Dolabella
 - Davi Souza
+
+
+![Uploading Captura de tela 2025-02-07 191529.png…]()
